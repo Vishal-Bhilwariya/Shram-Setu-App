@@ -7,12 +7,12 @@ class AuthPage extends StatelessWidget {
       backgroundColor: Colors.orange.shade50,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Color(0xFF00897B),
+        backgroundColor:  Color(0xFFFF6F00),
       ),
       body: Column(
         children: [
           Container(
-            height: 200,width: 500,color:Color(0xFF00897B),
+            height: 200,width: 500,color: Color(0xFFFF6F00),
             child: Image.asset(
               'assets/images/logo.jpg',
               height: 100,
@@ -20,9 +20,9 @@ class AuthPage extends StatelessWidget {
           ),
           Container(
             width: double.infinity,
-            height: 200,
+            height: 100,
             decoration: BoxDecoration(
-              color:Color(0xFF00897B),
+              color: Color(0xFFFF6F00),
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(50),
                 bottomRight: Radius.circular(50),
@@ -107,3 +107,65 @@ class AuthPage extends StatelessWidget {
     );
   }
 }
+
+// import 'package:flutter/material.dart';
+//
+// class AuthPage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.blueGrey[900],
+//       appBar: AppBar(
+//         backgroundColor: Colors.pink,
+//         title: Text(
+//           "Account Options",
+//           style: TextStyle(
+//             fontWeight: FontWeight.bold,
+//             fontSize: 22,
+//             color: Colors.white,
+//           ),
+//         ),
+//         centerTitle: true,
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(24.0),
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             ElevatedButton.icon(
+//               icon: Icon(Icons.login, color: Colors.white),
+//               label: Text("Login"),
+//               style: ElevatedButton.styleFrom(
+//                 backgroundColor: Colors.deepOrange,
+//                 padding: EdgeInsets.symmetric(vertical: 14, horizontal: 36),
+//                 textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+//                 shape: RoundedRectangleBorder(
+//                   borderRadius: BorderRadius.circular(12),
+//                 ),
+//               ),
+//               onPressed: () {
+//                 Navigator.pushNamed(context, '/login');
+//               },
+//             ),
+//             SizedBox(height: 20),
+//             ElevatedButton.icon(
+//               icon: Icon(Icons.person_add, color: Colors.white),
+//               label: Text("Create New Account"),
+//               style: ElevatedButton.styleFrom(
+//                 backgroundColor: Colors.teal,
+//                 padding: EdgeInsets.symmetric(vertical: 14, horizontal: 36),
+//                 textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+//                 shape: RoundedRectangleBorder(
+//                   borderRadius: BorderRadius.circular(12),
+//                 ),
+//               ),
+//               onPressed: () {
+//                 Navigator.pushNamed(context, '/create');
+//               },
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }

@@ -10,22 +10,22 @@ class LoginPage extends StatelessWidget {
       backgroundColor: Colors.orange.shade50,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Color(0xFF00897B),
+        backgroundColor:  Color(0xFFFF6F00),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
-              height: 150,width: 500,color: Color(0xFF00897B) ,
+              height: 150,width: 500,color:  Color(0xFFFF6F00) ,
               child: Image.asset(
                 'assets/images/logo.jpg',
               ),
             ),
             Container(
               width: double.infinity,
-              height: 175,
+              height: 150,
               decoration: BoxDecoration(
-                color: Color(0xFF00897B) ,
+                color:  Color(0xFFFF6F00) ,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(50),
                   bottomRight: Radius.circular(50),
@@ -129,3 +129,90 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
+
+// import 'package:flutter/material.dart';
+//
+// class LoginPage extends StatelessWidget {
+//   final emailController = TextEditingController();
+//   final passwordController = TextEditingController();
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.blueGrey[900],
+//       appBar: AppBar(
+//         backgroundColor: Colors.pink,
+//         title: Text(
+//           "Login",
+//           style: TextStyle(
+//             fontWeight: FontWeight.bold,
+//             color: Colors.white,
+//             fontSize: 22,
+//           ),
+//         ),
+//         centerTitle: true,
+//       ),
+//       body: Center(
+//         child: Padding(
+//           padding: const EdgeInsets.all(24.0),
+//           child: ListView(
+//             children: [
+//               TextField(
+//                 controller: emailController,
+//                 decoration: InputDecoration(
+//                   labelText: 'Email',
+//                   prefixIcon: Icon(Icons.email, color: Colors.indigo),
+//                   border: OutlineInputBorder(
+//                     borderRadius: BorderRadius.circular(12),
+//                   ),
+//                   filled: true,
+//                   fillColor: Colors.white,
+//                 ),
+//                 keyboardType: TextInputType.emailAddress,
+//               ),
+//               SizedBox(height: 16),
+//               TextField(
+//                 controller: passwordController,
+//                 obscureText: true,
+//                 obscuringCharacter: "*",
+//                 decoration: InputDecoration(
+//                   labelText: 'Password',
+//                   prefixIcon: Icon(Icons.lock, color: Colors.red),
+//                   suffixIcon: Icon(Icons.remove_red_eye),
+//                   border: OutlineInputBorder(
+//                     borderRadius: BorderRadius.circular(12),
+//                   ),
+//                   filled: true,
+//                   fillColor: Colors.white,
+//                 ),
+//               ),
+//               SizedBox(height: 24),
+//               ElevatedButton(
+//                 onPressed: () {},
+//                 child: Text("Login"),
+//                 style: ElevatedButton.styleFrom(
+//                   backgroundColor: Colors.deepOrange,
+//                   padding: EdgeInsets.symmetric(vertical: 16),
+//                   textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+//                   shape: RoundedRectangleBorder(
+//                     borderRadius: BorderRadius.circular(12),
+//                   ),
+//                 ),
+//               ),
+//               SizedBox(height: 12),
+//               TextButton(
+//                 onPressed: () {
+//                   Navigator.pushNamed(context, '/reset');
+//                 },
+//                 child: Text(
+//                   "Forgot Password?",
+//                   style: TextStyle(color: Colors.blueGrey),
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }

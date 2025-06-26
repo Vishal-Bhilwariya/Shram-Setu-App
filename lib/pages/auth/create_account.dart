@@ -13,14 +13,14 @@ class CreateAccountPage extends StatelessWidget {
       backgroundColor: Colors.orange.shade50,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Color(0xFF00897B),
+        backgroundColor:  Color(0xFFFF6F00),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             // Top Header
             Container(
-              height: 100,width: 500,color: Color(0xFF00897B) ,
+              height: 100,width: 500,color:  Color(0xFFFF6F00) ,
               child: Image.asset(
                 'assets/images/logo.jpg',
               ),
@@ -29,7 +29,7 @@ class CreateAccountPage extends StatelessWidget {
               width: double.infinity,
               height: 150,
               decoration: BoxDecoration(
-                color: Color(0xFF00897B) ,
+                color:  Color(0xFFFF6F00) ,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(40),
                   bottomRight: Radius.circular(40),
@@ -132,3 +132,123 @@ class CreateAccountPage extends StatelessWidget {
   }
 }
 
+
+//
+// import 'package:flutter/material.dart';
+//
+// class CreateAccountPage extends StatelessWidget {
+//   final fullName = TextEditingController();
+//   final number = TextEditingController();
+//   final age = TextEditingController();
+//   final emailController = TextEditingController();
+//   final passwordController = TextEditingController();
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.blueGrey[900],
+//       appBar: AppBar(
+//         backgroundColor: Colors.pink,
+//         title: Text(
+//           "Create Account",
+//           style: TextStyle(
+//             fontWeight: FontWeight.bold,
+//             color: Colors.white,
+//             fontSize: 22,
+//           ),
+//         ),
+//         centerTitle: true,
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(24.0),
+//         child: ListView(
+//           children: [
+//             TextField(
+//               controller: fullName,
+//               decoration: InputDecoration(
+//                 labelText: 'Full Name',
+//                 prefixIcon: Icon(Icons.person, color: Colors.deepOrange),
+//                 border: OutlineInputBorder(
+//                   borderRadius: BorderRadius.circular(12),
+//                 ),
+//                 filled: true,
+//                 fillColor: Colors.white,
+//               ),
+//             ),
+//             SizedBox(height: 16),
+//             TextField(
+//               controller: number,
+//               keyboardType: TextInputType.number,
+//               decoration: InputDecoration(
+//                 labelText: 'Mobile Number',
+//                 prefixIcon: Icon(Icons.phone, color: Colors.teal),
+//                 border: OutlineInputBorder(
+//                   borderRadius: BorderRadius.circular(12),
+//                 ),
+//                 filled: true,
+//                 fillColor: Colors.white,
+//               ),
+//             ),
+//             SizedBox(height: 16),
+//             TextField(
+//               controller: age,
+//               keyboardType: TextInputType.number,
+//               decoration: InputDecoration(
+//                 labelText: 'Age',
+//                 prefixIcon: Icon(Icons.cake, color: Colors.purple),
+//                 border: OutlineInputBorder(
+//                   borderRadius: BorderRadius.circular(12),
+//                 ),
+//                 filled: true,
+//                 fillColor: Colors.white,
+//               ),
+//             ),
+//             SizedBox(height: 16),
+//             TextField(
+//               controller: emailController,
+//               keyboardType: TextInputType.emailAddress,
+//               decoration: InputDecoration(
+//                 labelText: 'Email',
+//                 prefixIcon: Icon(Icons.email, color: Colors.indigo),
+//                 border: OutlineInputBorder(
+//                   borderRadius: BorderRadius.circular(12),
+//                 ),
+//                 filled: true,
+//                 fillColor: Colors.white,
+//               ),
+//             ),
+//             SizedBox(height: 16),
+//             TextField(
+//               controller: passwordController,
+//               obscureText: true,
+//               obscuringCharacter: "*",
+//               decoration: InputDecoration(
+//                 labelText: 'Password',
+//                 prefixIcon: Icon(Icons.lock, color: Colors.red),
+//                 suffixIcon: Icon(Icons.remove_red_eye),
+//                 border: OutlineInputBorder(
+//                   borderRadius: BorderRadius.circular(12),
+//                 ),
+//                 filled: true,
+//                 fillColor: Colors.white,
+//               ),
+//             ),
+//             SizedBox(height: 24),
+//             ElevatedButton(
+//               onPressed: () {},
+//               child: Text("Create"),
+//               style: ElevatedButton.styleFrom(
+//                 backgroundColor: Colors.deepOrange,
+//                 padding: EdgeInsets.symmetric(vertical: 16),
+//                 textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+//                 shape: RoundedRectangleBorder(
+//                   borderRadius: BorderRadius.circular(12),
+//                 ),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }

@@ -4,7 +4,7 @@ class RoleSelectionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor:  Color(0xFFFF6F00),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Color(0xFFFF6F00),
@@ -59,7 +59,7 @@ class RoleSelectionPage extends StatelessWidget {
                     icon: Icons.handyman,
                     text: "I am Worker",
                     color: Color(0xFFE0F7FA),
-                    routeName: '/auth',
+                    routeName: '/worker_dashboard',
                   ),
                   SizedBox(height: 20),
                   _buildLanguageTile(
@@ -67,7 +67,7 @@ class RoleSelectionPage extends StatelessWidget {
                     icon: Icons.business_center,
                     text: "I am Hirer",
                     color: Color(0xFFE0F7FA),
-                    routeName: '/auth',
+                    routeName: '/hirer-dashboard',
                   ),
                 ],
               ),
@@ -102,4 +102,94 @@ class RoleSelectionPage extends StatelessWidget {
   }
 }
 
-
+// import 'package:flutter/material.dart';
+//
+// class RoleSelectionPage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.blueGrey[900],
+//       appBar: AppBar(
+//         backgroundColor: Colors.pink,
+//         title: Text(
+//           "Select Role",
+//           style: TextStyle(
+//             fontWeight: FontWeight.bold,
+//             fontSize: 22,
+//             color: Colors.white,
+//           ),
+//         ),
+//         centerTitle: true,
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(24.0),
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             ElevatedButton.icon(
+//               icon: Icon(Icons.handyman, color: Colors.white),
+//               label: Text("Worker"),
+//               style: ElevatedButton.styleFrom(
+//                 backgroundColor: Colors.deepOrange,
+//                 padding: EdgeInsets.symmetric(vertical: 14, horizontal: 36),
+//                 textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+//                 shape: RoundedRectangleBorder(
+//                   borderRadius: BorderRadius.circular(12),
+//                 ),
+//               ),
+//               onPressed: () {
+//                 Navigator.pushNamed(context, '/auth');
+//               },
+//             ),
+//             SizedBox(height: 20),
+//             ElevatedButton.icon(
+//               icon: Icon(Icons.business_center, color: Colors.white),
+//               label: Text("Hirer"),
+//               style: ElevatedButton.styleFrom(
+//                 backgroundColor: Colors.teal,
+//                 padding: EdgeInsets.symmetric(vertical: 14, horizontal: 36),
+//                 textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+//                 shape: RoundedRectangleBorder(
+//                   borderRadius: BorderRadius.circular(12),
+//                 ),
+//               ),
+//               onPressed: () {
+//                 Navigator.pushNamed(context, '/auth');
+//               },
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+//
+//
+//
+// // // role_selection.dart
+// // import 'package:flutter/material.dart';
+// //
+// // class RoleSelectionPage extends StatelessWidget {
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return Scaffold(
+// //       appBar: AppBar(title: Text("Choose Role",style: TextStyle(fontWeight: FontWeight.bold))),
+// //       body: Center(
+// //         child: Column(
+// //           mainAxisAlignment: MainAxisAlignment.center,
+// //           children: [
+// //             TextButton(
+// //               onPressed: () =>  Navigator.pushNamed(context, '/auth'),
+// //               child: Text("WORKER",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),)
+// //             ),
+// //             Container(height: 10,),
+// //             TextButton(
+// //                 onPressed: () =>  Navigator.pushNamed(context, '/auth'),
+// //                 child: Text("HIRER",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),)
+// //             )
+// //           ],
+// //         ),
+// //       ),
+// //     );
+// //   }
+// // }

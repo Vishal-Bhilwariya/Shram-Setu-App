@@ -111,3 +111,89 @@ class ResetPasswordPage extends StatelessWidget {
   }
 }
 
+// import 'package:flutter/material.dart';
+//
+// class ResetPasswordPage extends StatelessWidget {
+//   final emailController = TextEditingController();
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.blueGrey[900],
+//       appBar: AppBar(
+//         backgroundColor: Colors.pink,
+//         title: Text(
+//           "Reset Password",
+//           style: TextStyle(
+//             color: Colors.white,
+//             fontWeight: FontWeight.bold,
+//             fontSize: 22,
+//           ),
+//         ),
+//         centerTitle: true,
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(24.0),
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             TextField(
+//               controller: emailController,
+//               keyboardType: TextInputType.emailAddress,
+//               decoration: InputDecoration(
+//                 labelText: 'Enter your email',
+//                 prefixIcon: Icon(Icons.email, color: Colors.indigo),
+//                 border: OutlineInputBorder(
+//                   borderRadius: BorderRadius.circular(12),
+//                 ),
+//                 filled: true,
+//                 fillColor: Colors.white,
+//               ),
+//             ),
+//             SizedBox(height: 24),
+//             ElevatedButton(
+//               onPressed: () {
+//                 // Add your reset logic here
+//               },
+//               child: Text("Send Reset Link"),
+//               style: ElevatedButton.styleFrom(
+//                 backgroundColor: Colors.deepOrange,
+//                 padding: EdgeInsets.symmetric(vertical: 16, horizontal: 32),
+//                 textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+//                 shape: RoundedRectangleBorder(
+//                   borderRadius: BorderRadius.circular(12),
+//                 ),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+//
+//
+// // import 'package:flutter/material.dart';
+// //
+// // class ResetPasswordPage extends StatelessWidget {
+// //   final emailController = TextEditingController();
+// //
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return Scaffold(
+// //       appBar: AppBar(title: Text("Reset Password")),
+// //       body: Center(
+// //         child: Padding(
+// //           padding: const EdgeInsets.all(20.0),
+// //           child: Column(
+// //             mainAxisAlignment: MainAxisAlignment.center,
+// //             children: [
+// //               TextField(controller: emailController, decoration: InputDecoration(labelText: 'Enter your email')),
+// //               ElevatedButton(onPressed: () {}, child: Text("Send Reset Link")),
+// //             ],
+// //           ),
+// //         ),
+// //       ),
+// //     );
+// //   }
+// // }

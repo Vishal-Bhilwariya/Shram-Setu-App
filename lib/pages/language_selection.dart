@@ -4,7 +4,7 @@ class LanguageSelectionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor:  Color(0xFFFF6F00),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Color(0xFFFF6F00),
@@ -26,7 +26,7 @@ class LanguageSelectionPage extends StatelessWidget {
             child: Column(
               children: [
                 Image.asset(
-                  'assets/images/logo.jpg',
+                  'assets/images/logo.png',
                   height: 200,
                 ),
                 SizedBox(height: 20),
@@ -59,7 +59,7 @@ class LanguageSelectionPage extends StatelessWidget {
                     icon: Icons.language,
                     text: "English",
                     color: Color(0xFFE0F7FA),
-                    routeName: '/role',
+                    routeName: '/auth',
                   ),
                   SizedBox(height: 20),
                   _buildLanguageTile(
@@ -67,7 +67,7 @@ class LanguageSelectionPage extends StatelessWidget {
                     icon: Icons.translate,
                     text: "Hindi",
                     color: Color(0xFFE0F7FA),
-                    routeName: '/role',
+                    routeName: '/auth',
                   ),
                 ],
               ),
@@ -101,4 +101,3 @@ class LanguageSelectionPage extends StatelessWidget {
     );
   }
 }
-

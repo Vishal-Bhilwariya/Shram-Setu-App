@@ -50,7 +50,7 @@ class SuccessScreen extends StatelessWidget {
           SizedBox(height: 40),
           ElevatedButton(
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(context,'/role');
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.deepOrange,
