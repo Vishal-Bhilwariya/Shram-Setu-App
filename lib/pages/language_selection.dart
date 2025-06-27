@@ -26,7 +26,7 @@ class LanguageSelectionPage extends StatelessWidget {
             child: Column(
               children: [
                 Image.asset(
-                  'assets/images/logo.png',
+                  'assets/images/logo.jpg',
                   height: 200,
                 ),
                 SizedBox(height: 20),

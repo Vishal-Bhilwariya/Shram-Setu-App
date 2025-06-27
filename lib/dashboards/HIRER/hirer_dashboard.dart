@@ -1,132 +1,147 @@
 import 'package:flutter/material.dart';
 
-class HirerDashboard extends StatelessWidget {
-  final List<Map<String, String>> workers = [
-    {
-      "name": "Ravi Kumar",
-      "profession": "Electrician",
-      "location": "Delhi",
-      "fees": "₹500/day",
-      "availability": "Available"
-    },
-    {
-      "name": "Suresh Patel",
-      "profession": "Plumber",
-      "location": "Jaipur",
-      "fees": "₹450/day",
-      "availability": "Not Available"
-    },
-    {
-      "name": "Amit Sharma",
-      "profession": "Carpenter",
-      "location": "Bhopal",
-      "fees": "₹600/day",
-      "availability": "Available"
+class HirerDashboard extends StatefulWidget {
+  const HirerDashboard({Key? key}) : super(key: key);
+
+  @override
+  _HirerDashboardState createState() => _HirerDashboardState();
+}
+
+class _HirerDashboardState extends State<HirerDashboard> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+
+    switch (index) {
+      case 1:
+        Navigator.pushNamed(context, '/search_workers');
+        break;
+      case 2:
+        Navigator.pushNamed(context, '/post_job');
+        break;
+      case 3:
+        Navigator.pushNamed(context, '/hirer_profile');
+        break;
     }
-  ];
+  }
+
+  Widget buildDashboardCard({required IconData icon, required String label, required VoidCallback onTap, Color? bgColor}) {
+    return Expanded(
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          height: 100,
+          margin: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: bgColor ?? Colors.orange.shade100,
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(icon, size: 30, color: Colors.deepOrange),
+              const SizedBox(height: 8),
+              Text(label, style: TextStyle(fontWeight: FontWeight.w600)),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.orange.shade100,
       appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Color(0xFFFF6F00),
-        title: Text(
-          "Hirer Dashboard",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 22,
-            color: Colors.white,
-          ),
-        ),
+        backgroundColor: Colors.deepOrange,
+        title: const Text("Welcome, Vishal!"),
         centerTitle: true,
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(color: Color(0xFFFF6F00)),
-
-              child: Text("Hirer Menu", style: TextStyle(color: Colors.white, fontSize: 22)),
-            ),
-            ListTile(
-              leading: Icon(Icons.person),
-              title: Text("Profile"),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.visibility),
-              title: Text("View Applied"),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.search),
-              title: Text("Search Nearby"),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.logout),
-              title: Text("Logout"),
-              onTap: () {},
-            ),
-          ],
-        ),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Icon(Icons.account_circle, size: 28),
+          ),
+        ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(12),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Available Workers", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            SizedBox(height: 12),
-            Expanded(
-              child: ListView.builder(
-                itemCount: workers.length,
-                itemBuilder: (context, index) {
-                  final worker = workers[index];
-                  return Card(
-                    elevation: 4,
-                    margin: const EdgeInsets.symmetric(vertical: 8),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundColor: Color(0xFFFF6F00),
-                        child: Text(worker["name"]![0], style: TextStyle(color: Colors.white)),
-                      ),
-                      title: Text(worker["name"]!),
-                      subtitle: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Profession: ${worker["profession"]}"),
-                          Text("Location: ${worker["location"]}"),
-                          Text("Fees: ${worker["fees"]}"),
-                          Text("Availability: ${worker["availability"]}"),
-                        ],
-                      ),
-                      trailing: Icon(Icons.arrow_forward_ios),
-                      onTap: () {
-                        // Open detail page or hire option
-                      },
-                    ),
-                  );
-                },
+            Row(
+              children: [
+                buildDashboardCard(
+                  icon: Icons.add,
+                  label: 'Post a Job',
+                  onTap: () => Navigator.pushNamed(context, '/post_job'),
+                  bgColor: Colors.green.shade300,
+                ),
+                buildDashboardCard(
+                  icon: Icons.person,
+                  label: 'View Applicants',
+                  onTap: () => Navigator.pushNamed(context, '/view_applicants'),
+                  bgColor: Colors.yellow.shade200,
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                buildDashboardCard(
+                  icon: Icons.people,
+                  label: 'Available Workers',
+                  onTap: () => Navigator.pushNamed(context, '/available_worker'),
+                  bgColor: Colors.blue.shade100,
+                ),
+                buildDashboardCard(
+                  icon: Icons.list_alt,
+                  label: 'My Posted Jobs',
+                  onTap: () => Navigator.pushNamed(context, '/my_jobs'),
+                  bgColor: Colors.pink.shade100,
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade50,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text("Connections",
+                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepOrange),
+                    onPressed: () => Navigator.pushNamed(context, '/connections'),
+                    child: const Text("View"),
+                  )
+                ],
               ),
             ),
-            SizedBox(height: 12),
-            ElevatedButton.icon(
-              icon: Icon(Icons.post_add),
-              label: Text("Create Vacancy",style: TextStyle(color: Colors.white),),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFFFF6F00),
-                minimumSize: Size(double.infinity, 48),
-              ),
-              onPressed: () {
-                // Navigate to vacancy creation screen
-              },
-            )
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        selectedItemColor: Colors.black,
+        backgroundColor: Colors.deepOrange,
+        unselectedItemColor: Colors.white,
+        type: BottomNavigationBarType.fixed,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home,size: 30,), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.search,size: 30), label: 'Search'),
+          BottomNavigationBarItem(icon: Icon(Icons.add_circle,size: 30), label: 'Post'),
+          BottomNavigationBarItem(icon: Icon(Icons.person,size: 30), label: 'Profile'),
+
+        ],
       ),
     );
   }
