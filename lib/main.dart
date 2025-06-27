@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:shram_setu_project/dashboards/HIRER/available_workers.dart';
 import 'package:shram_setu_project/dashboards/HIRER/hirer_profile.dart';
+import 'package:shram_setu_project/dashboards/HIRER/my_posted_jobs_page.dart';
+import 'package:shram_setu_project/dashboards/HIRER/post_job_page.dart';
+import 'package:shram_setu_project/dashboards/HIRER/search_workers.dart';
+import 'package:shram_setu_project/dashboards/HIRER/view_applicants_page.dart';
 import 'package:shram_setu_project/dashboards/HIRER/worker_profile_view.dart';
 import 'package:shram_setu_project/dashboards/WORKER/available_vacancies.dart';
 import 'package:shram_setu_project/dashboards/WORKER/job_applied.dart';
+import 'package:shram_setu_project/dashboards/WORKER/search_work_page.dart';
 import 'package:shram_setu_project/pages/auth/auth_page.dart';
 import 'package:shram_setu_project/pages/auth/create_account.dart';
 import 'package:shram_setu_project/pages/auth/login_page.dart';
@@ -16,6 +21,7 @@ import 'dashboards/HIRER/hirer_dashboard.dart';
 import 'dashboards/WORKER/profile_view_rating_page.dart';
 import 'dashboards/WORKER/worker_dashboard.dart';
 import 'dashboards/WORKER/add_worker_profile_page.dart';
+import 'dashboards/WORKER/worker_more_page.dart';
 import 'dashboards/WORKER/worker_profile_page.dart';
 void main() => runApp(ShramSetuApp());
 
@@ -53,6 +59,12 @@ class ShramSetuApp extends StatelessWidget {
         '/worker_profile_view': (context) => WorkerProfileView(),
         '/available_worker': (context) => AvailableWorkers(),
         '/hirer_profile': (context) => HirerProfile(),
+        '/search_workers': (context) => SearchWorkersPage(),
+        '/post_job': (context) => PostJobPage(),
+        '/my_posted_job': (context) => MyPostedJobsPage(),
+        '/view_applicants': (context) => ViewApplicantsPage(),
+        '/search_work': (context) => SearchWorkPage(),
+        '/worker_more': (context) => WorkerMorePage(),
 
       },
     );

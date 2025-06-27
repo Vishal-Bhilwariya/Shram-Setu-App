@@ -46,17 +46,31 @@ class WelcomePage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Container(
-              margin: EdgeInsets.only(top: 40),
-              child: Text(
-                "Every hand deserves work, every skill deserves respect — ShramSetu builds the bridge where dignity meets opportunity."
-                ,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 24,
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.brown.shade700,
-                ),
+              margin: EdgeInsets.only(top: 20),
+              child: Column(
+                children: [
+                  Text(
+                      "🔨 हर हाथ को काम मिले,🎯 हर हुनर को सम्मान मिले — 🛠️🤝 श्रमसेतु वह पुल है जहाँ 🌟 गरिमा और 🧑‍💼 अवसर मिलते हैं।",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.brown.shade700,
+                    ),
+                  ),
+                  SizedBox(height: 20,),
+                  Text(
+                    "🔨 Every hand deserves work,🎯 Every skill deserves respect —🛠️🤝 ShramSetu is the bridge where🌟 dignity meets opportunity.",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.brown.shade700,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

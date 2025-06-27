@@ -20,10 +20,11 @@ class _HirerDashboardState extends State<HirerDashboard> {
         Navigator.pushNamed(context, '/search_workers');
         break;
       case 2:
-        Navigator.pushNamed(context, '/post_job');
+        Navigator.pushNamed(context, '/hirer_profile');
         break;
       case 3:
-        Navigator.pushNamed(context, '/hirer_profile');
+      // Navigate to View Profile
+        Navigator.pushNamed(context, '/worker_more');
         break;
     }
   }
@@ -98,7 +99,7 @@ class _HirerDashboardState extends State<HirerDashboard> {
                 buildDashboardCard(
                   icon: Icons.list_alt,
                   label: 'My Posted Jobs',
-                  onTap: () => Navigator.pushNamed(context, '/my_jobs'),
+                  onTap: () => Navigator.pushNamed(context, '/my_posted_job'),
                   bgColor: Colors.pink.shade100,
                 ),
               ],
@@ -114,7 +115,7 @@ class _HirerDashboardState extends State<HirerDashboard> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text("Connections",
+                  const Text("Past Workers",
                       style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -138,8 +139,8 @@ class _HirerDashboardState extends State<HirerDashboard> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home,size: 30,), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.search,size: 30), label: 'Search'),
-          BottomNavigationBarItem(icon: Icon(Icons.add_circle,size: 30), label: 'Post'),
           BottomNavigationBarItem(icon: Icon(Icons.person,size: 30), label: 'Profile'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings, size: 30), label: 'More'),
 
         ],
       ),

@@ -39,13 +39,14 @@ class _WorkerDashboardState extends State<WorkerDashboard> {
     switch (index) {
       case 1:
       // Navigate to Search
+        Navigator.pushNamed(context, '/search_work');
         break;
       case 2:
         Navigator.pushNamed(context, '/worker_profile');
         break;
       case 3:
       // Navigate to View Profile
-
+        Navigator.pushNamed(context, '/worker_more');
         break;
     }
   }
