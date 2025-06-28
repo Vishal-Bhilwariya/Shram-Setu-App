@@ -1,3 +1,5 @@
+// In this new user can create their account
+
 import 'package:flutter/material.dart';
 
 class CreateAccountPage extends StatelessWidget {

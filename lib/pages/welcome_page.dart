@@ -1,3 +1,6 @@
+// THIS IS THE WELCOME PAGE --> WILL BE SHOWN WHEN SOMEONE OPEN THE APP
+// To go forward user have to click on "GET STARTED" button
+
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -21,7 +24,7 @@ class WelcomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(height: 40),
-                Image.asset('assets/images/logo.jpg', height: 150),
+                Image.asset('assets/images/logo.jpg', height: 150), // our app logo
                 SizedBox(height: 20),
                 Text(
                   "Welcome to",
@@ -31,7 +34,7 @@ class WelcomePage extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "SHRAM SETU",
+                  "SHRAM SETU", // App NAME
                   style: TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
@@ -48,6 +51,7 @@ class WelcomePage extends StatelessWidget {
             child: Container(
               margin: EdgeInsets.only(top: 20),
               child: Column(
+                // QUOTE IN HINDI AND ENGLISH WHICH DESCRIBE OUR APP IN SHORT
                 children: [
                   Text(
                       "🔨 हर हाथ को काम मिले,🎯 हर हुनर को सम्मान मिले — 🛠️🤝 श्रमसेतु वह पुल है जहाँ 🌟 गरिमा और 🧑‍💼 अवसर मिलते हैं।",
@@ -75,12 +79,14 @@ class WelcomePage extends StatelessWidget {
             ),
           ),
           Spacer(),
+
+          // This is the button "Get Started" -> on clickin it , user will redirect to the next page
           Padding(
             padding: const EdgeInsets.all(24.0),
             child: SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () => Navigator.pushNamed(context, '/language'),
+                onPressed: () => Navigator.pushNamed(context, '/language'), // connecting the next page(language selection page)
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFF4CAF50),
                   padding: EdgeInsets.symmetric(vertical: 16),

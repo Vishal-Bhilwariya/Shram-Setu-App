@@ -1,3 +1,6 @@
+// This is the success screen - it indicates that the u login  in the app with your account
+// In this u have a option to go to "DashBoard" -> click on it , u will redirect to the dashboard selection page
+
 import 'package:flutter/material.dart';
 
 class SuccessScreen extends StatelessWidget {

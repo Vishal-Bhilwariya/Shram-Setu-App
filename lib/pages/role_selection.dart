@@ -1,3 +1,7 @@
+// This is the page of "Role Selection" from Worker and Hirer
+// If you are worker then u should click on "I am Worker" . -> It will redirect you to WORKER DASHBOARD
+// If you are hirer then u should click on "I am Hirer" . -> It will redirect you to Hirer DASHBOARD
+
 import 'package:flutter/material.dart';
 
 class RoleSelectionPage extends StatelessWidget {

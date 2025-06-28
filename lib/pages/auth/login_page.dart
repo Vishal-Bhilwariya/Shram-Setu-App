@@ -1,3 +1,9 @@
+// In this user can login to their account using email and password.
+// after filling data -> click on  login --> u will redirect to success page
+
+// if u forgot ur password then u should reset your password by clicking on forgot password/
+
+
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {

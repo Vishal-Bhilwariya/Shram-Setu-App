@@ -120,7 +120,7 @@ class _HirerDashboardState extends State<HirerDashboard> {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.deepOrange),
-                    onPressed: () => Navigator.pushNamed(context, '/connections'),
+                    onPressed: () => Navigator.pushNamed(context, '/past_workers'),
                     child: const Text("View"),
                   )
                 ],

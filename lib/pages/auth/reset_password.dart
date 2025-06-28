@@ -1,3 +1,5 @@
+// This is the reset password page
+
 import 'package:flutter/material.dart';
 
 class ResetPasswordPage extends StatelessWidget {

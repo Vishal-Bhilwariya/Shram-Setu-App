@@ -1,3 +1,7 @@
+// In this page , there are two options -> Login or Create account
+// If u already have an account then click on "Login" -> it will redirect u to login page
+// If u does not have an account then click on "Create account" -> it will redirect u to account creation page
+
 import 'package:flutter/material.dart';
 
 class AuthPage extends StatelessWidget {

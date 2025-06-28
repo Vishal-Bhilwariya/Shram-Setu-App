@@ -1,3 +1,6 @@
+// In this page , User have to select their preferred language .
+// On clicking on language will redirect user to next page
+
 import 'package:flutter/material.dart';
 
 class LanguageSelectionPage extends StatelessWidget {
@@ -5,6 +8,7 @@ class LanguageSelectionPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor:  Color(0xFFFF6F00),
+      // APP BAR
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Color(0xFFFF6F00),
@@ -26,7 +30,7 @@ class LanguageSelectionPage extends StatelessWidget {
             child: Column(
               children: [
                 Image.asset(
-                  'assets/images/logo.jpg',
+                  'assets/images/logo.jpg', // app logo
                   height: 200,
                 ),
                 SizedBox(height: 20),
@@ -78,6 +82,7 @@ class LanguageSelectionPage extends StatelessWidget {
     );
   }
 
+  // THIS IS THE FUNCTION TO CREATE different language options.
   Widget _buildLanguageTile(BuildContext context, {
     required IconData icon,
     required String text,
