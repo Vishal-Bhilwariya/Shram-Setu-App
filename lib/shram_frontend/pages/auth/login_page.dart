@@ -1,8 +1,51 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class LoginPage extends StatelessWidget {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
+  Future<void> loginUser(BuildContext context) async {
+    final String email = emailController.text.trim();
+    final String password = passwordController.text.trim();
+
+    if (email.isEmpty || password.isEmpty) {
+      showError(context, "Please enter email and password");
+      return;
+    }
+
+    final url = Uri.parse("http://10.0.2.2:3000/login"); // Use 10.0.2.2 for emulator
+    try {
+      final response = await http.post(
+        url,
+        headers: {"Content-Type": "application/json"},
+        body: jsonEncode({
+          "email": email,
+          "password": password,
+        }),
+      );
+
+      final data = jsonDecode(response.body);
+
+      if (response.statusCode == 200) {
+        // ✅ Login successful
+        print("✅ Logged in as: ${data['user']['email']}");
+        Navigator.pushNamed(context, '/success');
+      } else {
+        // ❌ Error from server
+        showError(context, data['error'] ?? 'Login failed');
+      }
+    } catch (e) {
+      showError(context, "Server error: $e");
+    }
+  }
+
+  void showError(BuildContext context, String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(message, style: TextStyle(color: Colors.white)), backgroundColor: Colors.red),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -94,10 +137,7 @@ class LoginPage extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        print("🟢 Login button pressed with:");
-                        print("Email: ${emailController.text}");
-                        print("Password: ${passwordController.text}");
-                        Navigator.pushNamed(context, '/success');
+                        loginUser(context);
                       },
                       child: Text("Login"),
                       style: ElevatedButton.styleFrom(

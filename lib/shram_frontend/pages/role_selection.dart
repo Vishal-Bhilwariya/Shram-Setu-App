@@ -61,7 +61,7 @@ class RoleSelectionPage extends StatelessWidget {
                   _buildLanguageTile(
                     context,
                     icon: Icons.handyman,
-                    text: "I am Worker",
+                    text: "Worker Dashboard",
                     color: Color(0xFFE0F7FA),
                     routeName: '/worker_dashboard',
                   ),
@@ -69,7 +69,7 @@ class RoleSelectionPage extends StatelessWidget {
                   _buildLanguageTile(
                     context,
                     icon: Icons.business_center,
-                    text: "I am Hirer",
+                    text: "Hirer Dashboard",
                     color: Color(0xFFE0F7FA),
                     routeName: '/hirer-dashboard',
                   ),
